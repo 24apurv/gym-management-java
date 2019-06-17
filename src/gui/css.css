@@ -1,0 +1,140 @@
+/* variable declaration */
+* {
+    -fx-primary : #2F2F2D;
+    -fx-secondary : #1875CF;
+    -fx-primarytext : #B2B2B2;
+}
+
+/* root setting for dark theme */
+.root{
+    -fx-background-color: -fx-primary ;
+}
+
+/* icon styling */
+.glyph-icon{
+    -fx-fill : -fx-secondary ;
+}
+
+/* button styling */
+.button{
+    -fx-text-fill: -fx-primarytext ;
+    -fx-border-color : -fx-secondary ;
+    -fx-border-radius : 30px;
+    -fx-backgroud-radius : 30px;
+}
+
+.button:hover{
+    -fx-border-color : -fx-secondary ;
+    -fx-background-color: -fx-secondary;
+    -fx-border-radius : 30px;
+    -fx-background-radius: 30px;
+}
+
+/* text field styling */
+.text-field{
+    -fx-text-fill: -fx-primarytext;
+    -jfx-focus-color : -fx-secondary;
+    -jfx-unfocus-color : -fx-primarytext;
+}
+
+/* text area styling */
+.text-area{
+    -fx-text-fill: -fx-primarytext;
+    -jfx-focus-color : -fx-secondary;
+    -jfx-unfocus-color : -fx-primarytext;
+}
+
+/* tab pane styling */
+.tab{
+    -fx-font-family: calibri light;
+    -fx-pref-width: 160;
+    -fx-pref-height: 40;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-primarytext;
+}
+
+.tab-header-background{
+    -fx-background-color: -fx-primary;
+}
+
+.jfx-tab-pane .tab-selected-line{
+    -fx-background-color: -fx-secondary;
+}
+
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill: -fx-secondary;
+}
+
+/* tableview styling */
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler{
+    -fx-background-color: -fx-primary;
+}
+
+.table-view .column-header{
+    -fx-background-color: -fx-secondary;
+}
+
+.table-view .column-header .label{
+   -fx-text-fill: white;
+   -fx-font-family: CALIBRI LIGHT;
+   -fx-alignment: CENTER;
+}
+
+.table-view .cell{
+  -fx-alignment: CENTER;
+  -fx-background-color: transparent;
+  -fx-text-fill: -fx-primarytext;
+}
+
+.table-row-cell:selected {
+   -fx-border-color: -fx-secondary;
+}
+
+/* label styling */
+.label{
+    -fx-text-fill: -fx-primarytext;
+}
+
+/* radio button styling */
+.radio-button{
+    -fx-text-fill: -fx-primarytext;
+}
+
+.jfx-radio-button {
+    -jfx-selected-color: -fx-secondary;
+    -jfx-unselected-color: -fx-primarytext;
+}
+
+/* dialog styling */
+.jfx-dialog {
+    -fx-background-color : -fx-primary;
+    -fx-text-fill : -fx-primarytext;
+}
+
+/* combobox styling */
+.jfx-combo-box {
+    -fx-background-color : -fx-primary;
+    -fx-text-fill : -fx-primarytext;
+    -fx-text-inner-color: -fx-primarytext;
+    -fx-prompt-text-fill: -fx-primarytext;
+}
+
+.jfx-combo-box .cell {
+    -fx-text-fill : -fx-primarytext;
+    -fx-background-color : -fx-primary;
+}
+
+.jfx-combo-box .cell:hover{
+    -fx-text-fill : -fx-primarytext;
+    -fx-background-color : -fx-secondary;
+}
+
+.jfx-combo-box .label {
+	-fx-background-color:  -fx-primary;
+	-fx-text-fill: -fx-primarytext;
+}
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="403.0" prefWidth="800.0" stylesheets="@../../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.admin.users.AddUserController">
+   <children>
+      <Label layoutX="35.0" layoutY="14.0" text="Add User">
+         <font>
+            <Font name="Calibri Light" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUsername" layoutX="35.0" layoutY="97.0" prefHeight="25.0" prefWidth="304.0" styleClass="text-field" />
+      <Label layoutX="35.0" layoutY="72.0" text="Username" />
+      <Label layoutX="35.0" layoutY="157.0" text="Password" />
+      <Label layoutX="35.0" layoutY="250.0" text="Confirm Password" />
+      <JFXTextField fx:id="txtName" layoutX="448.0" layoutY="97.0" prefHeight="25.0" prefWidth="298.0" styleClass="text-field" />
+      <Label layoutX="448.0" layoutY="72.0" text="Name" />
+      <Label layoutX="448.0" layoutY="157.0" text="Branch" />
+      <Label layoutX="448.0" layoutY="250.0" text="Privilege" />
+      <JFXComboBox fx:id="branch" layoutX="448.0" layoutY="182.0" prefHeight="25.0" prefWidth="298.0" />
+      <JFXComboBox fx:id="privilege" layoutX="448.0" layoutY="275.0" prefHeight="25.0" prefWidth="304.0" />
+      <JFXButton fx:id="btnSubmit" layoutX="346.0" layoutY="344.0" onMouseClicked="#submit" prefHeight="27.0" prefWidth="109.0" text="Submit" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="35.0" layoutY="189.0" prefHeight="25.0" prefWidth="304.0" />
+      <JFXPasswordField fx:id="txtConfirmPassword" layoutX="35.0" layoutY="275.0" prefHeight="25.0" prefWidth="304.0" />
+      <FontAwesomeIcon iconName="CLOSE" layoutX="780.0" layoutY="19.0" onMouseClicked="#closeWindow" size="15" styleClass="glyph-icon" />
+   </children>
+</AnchorPane>

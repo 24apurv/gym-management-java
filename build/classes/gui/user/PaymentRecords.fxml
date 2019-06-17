@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane fx:id="stackPane" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.PaymentRecordsController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" stylesheets="@../css.css">
+         <children>
+            <TableView fx:id="paymentRecords" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="625.0">
+              <columns>
+                <TableColumn fx:id="col_date" prefWidth="83.0" text="Date" />
+                <TableColumn fx:id="col_membershipPlan" prefWidth="161.0" text="Membership Plan" />
+                  <TableColumn fx:id="col_amount" prefWidth="116.0" text="Amount" />
+                  <TableColumn fx:id="col_startingDate" prefWidth="133.0" text="Starting Date" />
+                  <TableColumn fx:id="col_invoiceNumber" prefWidth="133.0" text="Invoice Number" />
+              </columns>
+            </TableView>
+            <JFXButton layoutX="674.0" layoutY="187.0" onMouseClicked="#generateInvoice" prefHeight="27.0" prefWidth="112.0" text="Generate Invoice" />
+            <FontAwesomeIcon iconName="CLOSE" layoutX="779.0" layoutY="19.0" onMouseClicked="#closeWindow" size="15" styleClass="glyph-icon" wrappingWidth="14.428571701049805" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.UpdateInformationController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" stylesheets="@../css.css" text="Customer Information">
+         <font>
+            <Font name="Calibri Light" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="name" layoutX="18.0" layoutY="105.0" prefHeight="25.0" prefWidth="350.0" />
+      <Label layoutX="18.0" layoutY="77.0" text="Name" />
+      <Label layoutX="18.0" layoutY="164.0" text="Date of Birth" />
+      <JFXTextField fx:id="emailId" layoutX="18.0" layoutY="369.0" prefHeight="25.0" prefWidth="350.0" />
+      <Label layoutX="18.0" layoutY="254.0" text="Mobile Number" />
+      <JFXTextField fx:id="mobileNumber" layoutX="18.0" layoutY="282.0" prefHeight="25.0" prefWidth="350.0" />
+      <Label layoutX="18.0" layoutY="344.0" text="Email Id" />
+      <JFXTextArea fx:id="address" layoutX="426.0" layoutY="105.0" prefHeight="111.0" prefWidth="357.0">
+         <font>
+            <Font name="Calibri Light" size="12.0" />
+         </font>
+      </JFXTextArea>
+      <Label layoutX="426.0" layoutY="77.0" text="Address" />
+      <Label layoutX="426.0" layoutY="343.0" text="Branch" />
+      <Label layoutX="426.0" layoutY="423.0" text="Membership Plan" />
+      <Label layoutX="18.0" layoutY="426.0" text="Starting Date" />
+      <JFXDatePicker fx:id="startingDate" layoutX="18.0" layoutY="448.0" prefHeight="25.0" prefWidth="357.0" />
+      <Label layoutX="14.0" layoutY="506.0" text="Expiration Date" />
+      <JFXDatePicker fx:id="expirationDate" layoutX="14.0" layoutY="528.0" prefHeight="25.0" prefWidth="363.0" />
+      <Label layoutX="427.0" layoutY="254.0" text="Gender" />
+      <JFXRadioButton fx:id="male" layoutX="423.0" layoutY="292.0" stylesheets="@../css.css" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="female" layoutX="519.0" layoutY="292.0" stylesheets="@../css.css" text="Female" toggleGroup="$group" />
+      <JFXRadioButton fx:id="non_binary" layoutX="622.0" layoutY="292.0" stylesheets="@../css.css" text="Non-binary" toggleGroup="$group" />
+      <JFXButton layoutX="531.0" layoutY="527.0" onMouseClicked="#update" prefHeight="27.0" prefWidth="106.0" text="Update" />
+      <JFXDatePicker fx:id="dateOfBirth" layoutX="17.0" layoutY="191.0" prefHeight="25.0" prefWidth="357.0" />
+      <JFXComboBox fx:id="branch" editable="true" layoutX="422.0" layoutY="369.0" prefHeight="25.0" prefWidth="363.0" styleClass="jfx-combo-box" />
+      <JFXComboBox fx:id="membershipPlan" editable="true" layoutX="422.0" layoutY="448.0" prefHeight="25.0" prefWidth="363.0" styleClass="jfx-combo-box" />
+   </children>
+</AnchorPane>
