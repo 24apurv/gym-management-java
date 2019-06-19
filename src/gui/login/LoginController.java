@@ -51,7 +51,7 @@ public class LoginController implements Initializable {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
         String privilege = PersistUsers.getUsers().getPrivilege();
-        if(privilege.equals("user"))
+        if(new String("user").equals(privilege))
         {
             Stage stage = TitanX.stage;
             Parent root = FXMLLoader.load(getClass().getResource("/gui/user/UserWindow.fxml"));
@@ -60,9 +60,14 @@ public class LoginController implements Initializable {
             stage.centerOnScreen();
             stage.show();
         }
-        else if(privilege.equals("admin"))
+        else if(new String("admin").equals(privilege))
         {
-            
+            Stage stage = TitanX.stage;
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/admin/AdminWindow.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
         }
         else
         {

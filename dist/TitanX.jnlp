@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TitanX.jar" size="60752" download="eager" />
+    <jar href="TitanX.jar" size="73571" download="eager" />
     <jar href="lib\ant-javafx.jar" size="1500586" download="eager" />
     <jar href="lib\com.lowagie.text-2.1.7.jar" size="1782376" download="eager" />
     <jar href="lib\commons-beanutils-1.8.3.jar" size="232019" download="eager" />

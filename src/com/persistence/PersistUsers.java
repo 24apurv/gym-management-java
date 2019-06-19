@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class PersistUsers {
@@ -57,6 +60,27 @@ public class PersistUsers {
         }
         System.out.println(users);
         return users;
+    }
+    
+      public static ObservableList<Users> retrieveAll() throws SQLException
+    {
+        ObservableList<Users> list = FXCollections.observableArrayList();
+        
+        Connection conn=DatabaseConnection.getConnection();
+        String query="SELECT * FROM USERS";
+        Statement stmt = conn.createStatement();
+        ResultSet result=stmt.executeQuery(query);
+        while(result.next())
+        {
+            Users user = new Users();
+            user.setBranch(result.getString("BRANCH"));
+            user.setUsersname(result.getString("USERSNAME"));
+            user.setPrivilege(result.getString("PRIVILEGELEVEL"));
+            user.setUsername(result.getString("USERNAME"));
+            user.setPassword(result.getString("PWD"));
+            list.add(user);
+        }
+        return list;
     }
     
     public static Users getUsers()
