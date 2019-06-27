@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="522.0" prefWidth="439.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.admin.AddBranchController">
+   <children>
+      <Label layoutX="34.0" layoutY="34.0" stylesheets="@../css.css" text="Branch Information">
+         <font>
+            <Font name="Calibri Light" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="name" layoutX="34.0" layoutY="113.0" prefHeight="25.0" prefWidth="350.0" styleClass="text-field" />
+      <Label layoutX="34.0" layoutY="87.0" text="Name" />
+      <Label layoutX="34.0" layoutY="169.0" text="Branch Code" />
+      <JFXTextField fx:id="code" layoutX="34.0" layoutY="200.0" prefHeight="25.0" prefWidth="350.0" styleClass="text-field" />
+      <Label layoutX="34.0" layoutY="261.0" text="Address" />
+      <JFXTextArea fx:id="address" layoutX="28.0" layoutY="280.0" prefHeight="136.0" prefWidth="362.0" styleClass="text-area" stylesheets="@../css.css" />
+      <JFXButton fx:id="btnSubmit" layoutX="165.0" layoutY="454.0" onMouseClicked="#submit" prefHeight="27.0" prefWidth="88.0" text="Submit" />
+      <FontAwesomeIcon iconName="CLOSE" layoutX="413.0" layoutY="27.0" onMouseClicked="#exitWindow" size="15" styleClass="glyph-icon" />
+   </children>
+</AnchorPane>

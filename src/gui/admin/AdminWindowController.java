@@ -8,7 +8,9 @@ import com.jfoenix.controls.JFXDialogLayout;
 import com.model.Branch;
 import com.model.Users;
 import com.persistence.PersistBranch;
+import com.persistence.PersistCustomer;
 import com.persistence.PersistUsers;
+import gui.user.UserWindowController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -16,6 +18,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -133,6 +137,50 @@ public class AdminWindowController implements Initializable {
 
     @FXML
     private void removeBranch(MouseEvent event) {
+        branch = branchTable.getSelectionModel().getSelectedItem();
+        if(branch==null)
+        {
+            String title="Warning";
+            String content="No record selected";
+            JFXDialogLayout dialogContent=new JFXDialogLayout();
+            dialogContent.setHeading(new Text(title));
+            dialogContent.setBody(new Text(content));
+            JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+            dialog.applyCss();
+            dialog.show();
+            return;
+        }
+        String title="Delete";
+        String content="Are you sure you want to delete customer record?";
+        JFXDialogLayout dialogContent=new JFXDialogLayout();
+        dialogContent.setHeading(new Text(title));
+        dialogContent.setBody(new Text(content));
+        JFXButton yes=new JFXButton("Yes");
+        yes.setButtonType(JFXButton.ButtonType.RAISED);
+        JFXButton no=new JFXButton("No");
+        no.setButtonType(JFXButton.ButtonType.RAISED);
+        dialogContent.setActions(yes,no);
+        JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+        yes.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent e)
+        {
+            try {
+                PersistBranch.remove(branch.getCode());
+            } catch (SQLException ex) {
+                Logger.getLogger(UserWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                dialog.close();
+        }
+        });
+        no.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent e)
+        {
+            dialog.close();
+        }
+        });
+        dialog.show();
     }
 
     @FXML
@@ -172,6 +220,50 @@ public class AdminWindowController implements Initializable {
 
     @FXML
     private void removeUser(MouseEvent event) {
+        user = usersTable.getSelectionModel().getSelectedItem();
+        if(user==null)
+        {
+            String title="Warning";
+            String content="No record selected";
+            JFXDialogLayout dialogContent=new JFXDialogLayout();
+            dialogContent.setHeading(new Text(title));
+            dialogContent.setBody(new Text(content));
+            JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+            dialog.applyCss();
+            dialog.show();
+            return;
+        }
+        String title="Delete";
+        String content="Are you sure you want to delete customer record?";
+        JFXDialogLayout dialogContent=new JFXDialogLayout();
+        dialogContent.setHeading(new Text(title));
+        dialogContent.setBody(new Text(content));
+        JFXButton yes=new JFXButton("Yes");
+        yes.setButtonType(JFXButton.ButtonType.RAISED);
+        JFXButton no=new JFXButton("No");
+        no.setButtonType(JFXButton.ButtonType.RAISED);
+        dialogContent.setActions(yes,no);
+        JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+        yes.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent e)
+        {
+            try {
+                PersistUsers.remove(user.getUsername());
+            } catch (SQLException ex) {
+                Logger.getLogger(UserWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                dialog.close();
+        }
+        });
+        no.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent e)
+        {
+            dialog.close();
+        }
+        });
+        dialog.show();
     }
 
     @FXML
