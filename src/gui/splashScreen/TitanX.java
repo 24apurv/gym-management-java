@@ -8,10 +8,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author Tanmayee
- */
 public class TitanX extends Application {
     
     public static Stage stage = null;

@@ -35,7 +35,7 @@ public class Mail {
         System.out.println("Session created");
         
         String subject = "Invoice for TitanX Membership";
-        String body = "Hello "+customer.getName()+", PFA invoice for your membership at TitanX Fitness. Regards, Team TitanX";
+        String body = "Hello "+customer.getName()+",\n\n PFA invoice for your membership at TitanX Fitness.\n\n Regards,\n Team TitanX";
         
         EmailUtil.sendAttachmentEmail(session, toEmail, subject, body);
                     

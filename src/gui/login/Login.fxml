@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -28,5 +29,6 @@
          </font>
       </JFXButton>
       <FontAwesomeIcon iconName="CLOSE" layoutX="581.0" layoutY="19.0" onMouseClicked="#close" size="15" styleClass="glyph-icon" wrappingWidth="10.642862677574158" />
+      <Label fx:id="errorTxt" alignment="CENTER" layoutX="191.0" layoutY="353.0" prefHeight="14.0" prefWidth="226.0" style="-fx-text-fill: RED;" stylesheets="@../css.css" textAlignment="CENTER" />
    </children>
 </AnchorPane>

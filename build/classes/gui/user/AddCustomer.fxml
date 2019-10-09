@@ -45,5 +45,6 @@
       <JFXButton fx:id="btnSubmit" layoutX="356.0" layoutY="466.0" onMouseClicked="#submit" prefHeight="27.0" prefWidth="88.0" text="Submit" />
       <FontAwesomeIcon iconName="CLOSE" layoutX="782.0" layoutY="19.0" onMouseClicked="#exitWindow" size="15" styleClass="glyph-icon" />
       <JFXComboBox fx:id="branch" layoutX="416.0" layoutY="379.0" prefHeight="25.0" prefWidth="357.0" styleClass="jfx-combo-box" />
+      <Label fx:id="errorLbl" alignment="CENTER" layoutX="245.0" layoutY="509.0" prefHeight="14.0" prefWidth="310.0" style="-fx-text-fill: RED;" textAlignment="CENTER" />
    </children>
 </AnchorPane>

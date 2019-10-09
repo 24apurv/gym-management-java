@@ -1,7 +1,6 @@
 
 package gui.user;
 
-import com.db.DatabaseConnection;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
@@ -11,12 +10,8 @@ import com.model.Customer;
 import com.persistence.PersistBranch;
 import com.persistence.PersistCustomer;
 import com.persistence.PersistMembershipPlans;
-import gui.user.UserWindowController;
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -108,6 +103,7 @@ public class UpdateInformationController implements Initializable {
 
     @FXML
     private void update(MouseEvent event) throws SQLException {
+        
         customer.setName(name.getText());
         Date date=Date.valueOf(dateOfBirth.getValue());
         customer.setDateOfBirth(date);

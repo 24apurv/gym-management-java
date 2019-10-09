@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -12,68 +14,106 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.admin.AdminWindowController">
-   <top>
-      <AnchorPane prefHeight="23.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="lblHello" alignment="TOP_LEFT" text="Hello" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1152.0" AnchorPane.topAnchor="0.0">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-               <padding>
-                  <Insets left="10.0" top="5.0" />
-               </padding>
-            </Label>
-            <FontAwesomeIcon iconName="CLOSE" layoutX="1191.0" layoutY="18.0" onMouseClicked="#exitApplication" size="15" styleClass="glyph-icon" wrappingWidth="19.0" />
-         </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <JFXTabPane BorderPane.alignment="CENTER">
-         <tabs>
-            <Tab text="Dashboard">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Branches">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="643.0">
-                     <children>
-                        <TableView fx:id="branchTable" layoutX="133.0" layoutY="43.0" prefHeight="544.0" prefWidth="671.0">
-                          <columns>
-                            <TableColumn fx:id="col_BranchName" prefWidth="162.0" text="Branch Name" />
-                              <TableColumn fx:id="col_BranchCode" prefWidth="148.0" text="Branch Code" />
-                              <TableColumn fx:id="col_Address" prefWidth="360.0" text="Address" />
-                          </columns>
-                        </TableView>
-                        <JFXButton fx:id="btnAddBranch" layoutX="857.0" layoutY="83.0" onMouseClicked="#addBranch" prefHeight="27.0" prefWidth="161.0" text="Add Branch" />
-                        <JFXButton fx:id="btnRemoveBranch" layoutX="857.0" layoutY="135.0" onMouseClicked="#removeBranch" prefHeight="27.0" prefWidth="161.0" text="Remove Branch" />
-                        <JFXButton fx:id="btnEditBranch" layoutX="857.0" layoutY="187.0" onMouseClicked="#editBranch" prefHeight="27.0" prefWidth="161.0" text="Edit Branch" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Users">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView fx:id="usersTable" layoutX="83.0" layoutY="15.0" prefHeight="603.0" prefWidth="801.0">
-                          <columns>
-                            <TableColumn fx:id="col_UsersName" prefWidth="288.0" text="Name" />
-                            <TableColumn fx:id="col_Username" prefWidth="186.0" text="Username" />
-                              <TableColumn fx:id="col_Branch" prefWidth="187.0" text="Branch" />
-                              <TableColumn fx:id="col_Privilege" prefWidth="139.0" text="Privilege" />
-                          </columns>
-                        </TableView>
-                        <JFXButton fx:id="btnAddUser" layoutX="941.0" layoutY="66.0" onMouseClicked="#addUser" prefHeight="27.0" prefWidth="178.0" text="Add User" />
-                        <JFXButton fx:id="btnRemoveUser" layoutX="941.0" layoutY="119.0" onMouseClicked="#removeUser" prefHeight="27.0" prefWidth="178.0" text="Remove User" />
-                        <JFXButton fx:id="btnUpdateUser" layoutX="941.0" layoutY="174.0" onMouseClicked="#updateUser" prefHeight="27.0" prefWidth="178.0" text="Update User" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-         </tabs>
-      </JFXTabPane>
-   </center>
+<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.admin.AdminWindowController">
+    <top>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblHello" alignment="TOP_LEFT" layoutY="-1.0" prefHeight="23.0" prefWidth="480.0" text="Hello" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="-1.0">
+                    <font>
+                        <Font name="Calibri" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" top="5.0" />
+                    </padding>
+                </Label>
+                <FontAwesomeIcon iconName="CLOSE" layoutX="1005.0" layoutY="16.0" onMouseClicked="#exitApplication" size="15" styleClass="glyph-icon" wrappingWidth="19.0" />
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <JFXTabPane BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Branches">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="643.0">
+                            <children>
+                                <TableView fx:id="branchTable" layoutX="70.0" layoutY="44.0" prefHeight="450.0" prefWidth="671.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_BranchName" prefWidth="162.0" text="Branch Name" />
+                                        <TableColumn fx:id="col_BranchCode" prefWidth="148.0" text="Branch Code" />
+                                        <TableColumn fx:id="col_Address" prefWidth="360.0" text="Address" />
+                                    </columns>
+                                </TableView>
+                                <JFXButton fx:id="btnAddBranch" layoutX="794.0" layoutY="84.0" onMouseClicked="#addBranch" prefHeight="27.0" prefWidth="161.0" text="Add Branch" />
+                                <JFXButton fx:id="btnRemoveBranch" layoutX="794.0" layoutY="136.0" onMouseClicked="#removeBranch" prefHeight="27.0" prefWidth="161.0" text="Remove Branch" />
+                                <JFXButton fx:id="btnEditBranch" layoutX="794.0" layoutY="188.0" onMouseClicked="#editBranch" prefHeight="27.0" prefWidth="161.0" text="Edit Branch" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Users">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="usersTable" layoutX="23.0" layoutY="36.0" prefHeight="474.0" prefWidth="772.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_UsersName" prefWidth="288.0" text="Name" />
+                                        <TableColumn fx:id="col_Username" prefWidth="186.0" text="Username" />
+                                        <TableColumn fx:id="col_Branch" prefWidth="187.0" text="Branch" />
+                                        <TableColumn fx:id="col_Privilege" prefWidth="139.0" text="Privilege" />
+                                    </columns>
+                                </TableView>
+                                <JFXButton fx:id="btnAddUser" layoutX="825.0" layoutY="58.0" onMouseClicked="#addUser" prefHeight="27.0" prefWidth="178.0" text="Add User" />
+                                <JFXButton fx:id="btnRemoveUser" layoutX="825.0" layoutY="111.0" onMouseClicked="#removeUser" prefHeight="27.0" prefWidth="178.0" text="Remove User" />
+                                <JFXButton fx:id="btnUpdateUser" layoutX="825.0" layoutY="166.0" onMouseClicked="#updateUser" prefHeight="27.0" prefWidth="178.0" text="Update User" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Profile">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <FontAwesomeIcon glyphStyleClass="" iconName="USER" layoutX="177.0" layoutY="287.0" size="200" styleClass="glyph-icon" />
+                                <JFXTextField fx:id="username" editable="false" layoutX="618.0" layoutY="163.0" prefHeight="22.0" prefWidth="261.0" />
+                                <Label layoutX="538.0" layoutY="167.0" text="Username :">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <JFXPasswordField fx:id="password" layoutX="618.0" layoutY="241.0" prefHeight="22.0" prefWidth="262.0" />
+                                <Label layoutX="538.0" layoutY="245.0" prefHeight="14.0" prefWidth="71.0" text="Password :">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <JFXPasswordField fx:id="confirmPassword" layoutX="618.0" layoutY="324.0" prefHeight="22.0" prefWidth="262.0" />
+                                <Label layoutX="538.0" layoutY="319.0" prefHeight="14.0" prefWidth="71.0" text="Confirm ">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="538.0" layoutY="337.0" prefHeight="14.0" prefWidth="71.0" text="Password :">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="usersname" layoutX="618.0" layoutY="79.0" prefHeight="22.0" prefWidth="261.0" />
+                                <Label layoutX="538.0" layoutY="83.0" text="Name :">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="btnSubmit" layoutX="451.0" layoutY="424.0" onMouseClicked="#submitUser" prefHeight="25.0" prefWidth="114.0" text="Submit">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+    </center>
 </BorderPane>

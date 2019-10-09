@@ -5,8 +5,10 @@ import com.db.DatabaseConnection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.model.Customer;
+import com.model.Users;
 import com.persistence.PersistCustomer;
 import com.persistence.PersistUsers;
 import gui.splashScreen.TitanX;
@@ -83,12 +85,25 @@ public class UserWindowController implements Initializable {
     }
     @FXML
     private JFXButton btnPaymentRecord;
+    @FXML
+    private JFXTextField username;
+    @FXML
+    private JFXPasswordField password;
+    @FXML
+    private JFXPasswordField confirmPassword;
+    @FXML
+    private JFXTextField usersname;
+    @FXML
+    private JFXButton btnSubmit;
     
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String name = PersistUsers.getUsers().getUsersname();
         lblHello.setText("Hello, "+name);
+        
+        username.setText(PersistUsers.getUsers().getUsername());
+        usersname.setText(PersistUsers.getUsers().getUsersname());
         try {
            loadTable();
         } catch (SQLException ex) {
@@ -303,6 +318,31 @@ public class UserWindowController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void submitUser(MouseEvent event) throws SQLException {
+        if(!(password.getText().equals(confirmPassword.getText())))
+        {
+            String title="Warning";
+            String content="Passwords do not match";
+            JFXDialogLayout dialogContent=new JFXDialogLayout();
+            dialogContent.setHeading(new Text(title));
+            dialogContent.setBody(new Text(content));
+            JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+            dialog.applyCss();
+            dialog.show();
+            password.clear();
+            confirmPassword.clear();
+            return;
+        }
+        Users user = new Users();
+        user.setUsersname(username.getText());
+        user.setUsersname(usersname.getText());
+        user.setPassword(password.getText());
+        user.setBranch(PersistUsers.getUsers().getBranch());
+        user.setPrivilege(PersistUsers.getUsers().getPrivilege());
+        PersistUsers.update(user);
     }
     
 }

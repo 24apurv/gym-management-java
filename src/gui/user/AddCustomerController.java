@@ -7,7 +7,6 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
-import com.model.Branch;
 import com.model.Customer;
 import com.persistence.PersistBranch;
 import com.persistence.PersistCustomer;
@@ -18,11 +17,11 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
@@ -62,6 +61,8 @@ public class AddCustomerController implements Initializable {
     private JFXButton btnSubmit;
     
     ObservableList<String> list;
+    @FXML
+    private Label errorLbl;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,10 +73,30 @@ public class AddCustomerController implements Initializable {
         }
         branch.setItems(list);
         branch.setValue(PersistUsers.getUsers().getBranch());
+        mobileNumber.setText("+91-");
     }    
-
     @FXML
     private void submit(MouseEvent event) throws SQLException {
+        
+        if(name.getText()==null || dateOfBirth.getValue()==null || address.getText()==null || branch.getValue()==null || group.getSelectedToggle()==null)
+        {
+            errorLbl.setText("Fill all the fields!");
+            return;
+        }
+        
+        if(!emailId.getText().matches("^(.+)@(.+)$"))
+        {
+            errorLbl.setText("Invalid email!");
+            emailId.clear();
+            return;
+        }
+        if( !mobileNumber.getText().matches("^(\\+91[-s]?)?[0]?(91)?[789]\\d{9}$"))
+        {
+            errorLbl.setText("Invalid mobile number!");
+            mobileNumber.clear();
+            return;
+        }
+        
         Customer customer = new Customer();
         customer.setName(name.getText());
         Date date=Date.valueOf(dateOfBirth.getValue());

@@ -96,7 +96,8 @@ public class PaymentController implements Initializable {
     @FXML
     private void pay(MouseEvent event) throws SQLException, IOException {
         File file = new File("C:/Invoice/invoice.pdf");
-        file.delete();
+        if (file.exists())
+            file.delete();
         recordTransaction();
         transaction = PersistTransaction.retrieveLatest();
         System.out.println(transaction);

@@ -5,10 +5,11 @@ import com.db.DatabaseConnection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import com.model.Branch;
 import com.model.Users;
 import com.persistence.PersistBranch;
-import com.persistence.PersistCustomer;
 import com.persistence.PersistUsers;
 import gui.user.UserWindowController;
 import java.io.IOException;
@@ -93,6 +94,16 @@ public class AdminWindowController implements Initializable {
     {
         return user;
     }
+    @FXML
+    private JFXTextField username;
+    @FXML
+    private JFXPasswordField password;
+    @FXML
+    private JFXPasswordField confirmPassword;
+    @FXML
+    private JFXTextField usersname;
+    @FXML
+    private JFXButton btnSubmit;
 
 
     @Override
@@ -112,6 +123,10 @@ public class AdminWindowController implements Initializable {
             col_Branch.setCellValueFactory(new PropertyValueFactory<>("branch"));
             col_Privilege.setCellValueFactory(new PropertyValueFactory<>("privilege"));;
             usersTable.setItems(usersList);
+            
+            
+            username.setText(PersistUsers.getUsers().getUsername());
+            usersname.setText(PersistUsers.getUsers().getUsersname());
             
         } catch (SQLException ex) {
             Logger.getLogger(AdminWindowController.class.getName()).log(Level.SEVERE, null, ex);
@@ -288,6 +303,32 @@ public class AdminWindowController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void submitUser(MouseEvent event) throws SQLException {
+        if(!(password.getText().equals(confirmPassword.getText())))
+        {
+            String title="Warning";
+            String content="Passwords do not match";
+            JFXDialogLayout dialogContent=new JFXDialogLayout();
+            dialogContent.setHeading(new Text(title));
+            dialogContent.setBody(new Text(content));
+            JFXDialog dialog=new JFXDialog(stackPane, dialogContent, JFXDialog.DialogTransition.BOTTOM);
+            dialog.applyCss();
+            dialog.show();
+            password.clear();
+            confirmPassword.clear();
+            return;
+        }
+        Users user = new Users();
+        user.setUsersname(username.getText());
+        user.setUsersname(usersname.getText());
+        user.setPassword(password.getText());
+        user.setBranch(PersistUsers.getUsers().getBranch());
+        user.setPrivilege(PersistUsers.getUsers().getPrivilege());
+        PersistUsers.update(user);
+        
     }
     
 }
