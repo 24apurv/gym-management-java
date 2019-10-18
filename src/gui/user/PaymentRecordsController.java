@@ -1,14 +1,12 @@
 
 package gui.user;
 
-import com.db.DatabaseConnection;
 import com.invoice.Invoice;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.model.Transaction;
 import com.persistence.PersistCurrentTransaction;
 import com.persistence.PersistTransaction;
-import gui.user.UserWindowController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -81,6 +79,7 @@ public class PaymentRecordsController implements Initializable {
             dialog.show();
             return;
         }
+        PersistCurrentTransaction.remove();
         PersistCurrentTransaction.store(transaction);
         Invoice.generateInvoice();
         PersistCurrentTransaction.remove();

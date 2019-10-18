@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.admin.AddPlanController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" stylesheets="@../css.css" text="Plan Information">
+         <font>
+            <Font name="Calibri Light" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="name" layoutX="124.0" layoutY="96.0" prefHeight="25.0" prefWidth="350.0" styleClass="text-field" />
+      <Label layoutX="124.0" layoutY="69.0" text="Name" />
+      <Label layoutX="124.0" layoutY="148.0" text="Duration (in months)" />
+      <Label layoutX="124.0" layoutY="230.0" text="Amount" />
+      <JFXButton fx:id="btnSubmit" layoutX="212.0" layoutY="333.0" onMouseClicked="#submit" prefHeight="27.0" prefWidth="178.0" text="Submit" />
+      <JFXTextField fx:id="duration" layoutX="124.0" layoutY="181.0" prefHeight="25.0" prefWidth="350.0" styleClass="text-field" />
+      <JFXTextField fx:id="amount" layoutX="125.0" layoutY="261.0" prefHeight="25.0" prefWidth="350.0" styleClass="text-field" />
+      <FontAwesomeIcon fx:id="close" iconName="CLOSE" layoutX="580.0" layoutY="18.0" onMouseClicked="#exitWindow" styleClass="glyph-icon" />
+   </children>
+</AnchorPane>

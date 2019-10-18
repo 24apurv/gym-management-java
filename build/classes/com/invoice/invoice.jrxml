@@ -30,7 +30,7 @@
 			<staticText>
 				<reportElement x="455" y="21" width="100" height="20" uuid="80f35a24-3790-4423-be0d-074f6e853952"/>
 				<textElement>
-					<font fontName="Lucida Fax" size="16" isBold="true"/>
+					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tax Invoice]]></text>
 			</staticText>

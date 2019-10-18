@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.error.InternetErrorController">
+   <children>
+      <Label alignment="CENTER" layoutX="164.0" layoutY="135.0" prefHeight="48.0" prefWidth="273.0" style="-fx-text-fill: RED;" text="Please check your internet connection" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnExit" layoutX="228.0" layoutY="242.0" onMouseClicked="#exit" prefHeight="27.0" prefWidth="145.0" text="Exit " />
+   </children>
+</AnchorPane>

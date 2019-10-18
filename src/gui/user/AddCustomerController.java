@@ -14,6 +14,7 @@ import com.persistence.PersistUsers;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,11 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Tanmayee
- */
+
 public class AddCustomerController implements Initializable {
 
     @FXML
@@ -96,10 +93,15 @@ public class AddCustomerController implements Initializable {
             mobileNumber.clear();
             return;
         }
-        
+        Date date=Date.valueOf(dateOfBirth.getValue());
+        Date today = new Date(Calendar.getInstance().getTime().getTime());
+        if(date.after(today))
+        {
+            errorLbl.setText("Invalid date!");
+            return;
+        }
         Customer customer = new Customer();
         customer.setName(name.getText());
-        Date date=Date.valueOf(dateOfBirth.getValue());
         customer.setDateOfBirth(date);
         customer.setAddress(address.getText());
         customer.setMobileNumber(mobileNumber.getText());
