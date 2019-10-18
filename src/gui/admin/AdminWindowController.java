@@ -15,6 +15,7 @@ import com.notify.Notification;
 import com.persistence.PersistBranch;
 import com.persistence.PersistMembershipPlans;
 import com.persistence.PersistUsers;
+import com.report.ReportGenerator;
 import gui.user.UserWindowController;
 import java.io.IOException;
 import java.net.URL;
@@ -138,6 +139,16 @@ public class AdminWindowController implements Initializable {
     private JFXButton btnSend;
     @FXML
     private JFXTextField emailSubject;
+    @FXML
+    private JFXButton btnGenderDistribution;
+    @FXML
+    private JFXButton btnAgeDistribution;
+    @FXML
+    private JFXButton btnMonthlySales;
+    @FXML
+    private JFXButton btnBranchSales;
+    @FXML
+    private JFXButton btnPlanSales;
 
 
     @Override
@@ -457,6 +468,31 @@ public class AdminWindowController implements Initializable {
     @FXML
     private void sendNotifications(MouseEvent event) throws SQLException {
         Notification.notify(emailSubject.getText(), emailText.getText());
+    }
+
+    @FXML
+    private void genderDistribution(MouseEvent event) throws SQLException, IOException {
+        ReportGenerator.genderDistribution();
+    }
+
+    @FXML
+    private void ageDistribution(MouseEvent event) throws SQLException, IOException {
+        ReportGenerator.ageDistribution();
+    }
+
+    @FXML
+    private void monthlySales(MouseEvent event) throws SQLException, IOException {
+        ReportGenerator.monthlySales();
+    }
+
+    @FXML
+    private void branchSales(MouseEvent event) throws SQLException, IOException {
+        ReportGenerator.branchSales();
+    }
+
+    @FXML
+    private void planSales(MouseEvent event) throws SQLException, IOException {
+        ReportGenerator.planSales();
     }
     
 }

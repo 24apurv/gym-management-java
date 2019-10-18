@@ -100,6 +100,19 @@
                   </AnchorPane>
               </content>
             </Tab>
+            <Tab text="Reports">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="btnGenderDistribution" layoutX="391.0" layoutY="122.0" onMouseClicked="#genderDistribution" prefHeight="27.0" prefWidth="242.0" text="Gender wise distribution" />
+                        <JFXButton fx:id="btnAgeDistribution" layoutX="391.0" layoutY="189.0" onMouseClicked="#ageDistribution" prefHeight="27.0" prefWidth="242.0" text="Age wise distribution" />
+                        <JFXButton fx:id="btnMonthlySales" layoutX="391.0" layoutY="256.0" onMouseClicked="#monthlySales" prefHeight="27.0" prefWidth="242.0" text="Monthly sales" />
+                        <JFXButton fx:id="btnBranchSales" layoutX="391.0" layoutY="325.0" onMouseClicked="#branchSales" prefHeight="27.0" prefWidth="242.0" text="Branch wise sales" />
+                        <JFXButton fx:id="btnPlanSales" layoutX="391.0" layoutY="388.0" onMouseClicked="#planSales" prefHeight="27.0" prefWidth="242.0" text="Plan wise sales" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
                 <Tab text="Profile">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
