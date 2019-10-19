@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="93d5dbc3-dc7c-4829-9b12-126ac69088b3">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="96"/>
 	<subDataset name="Table Dataset 1" uuid="6b8bf83f-ecc8-4e3b-8125-4f49391c8df7"/>
 	<queryString>
 		<![CDATA[SELECT * FROM CURRENTTRANSACTION]]>
@@ -59,106 +59,106 @@
 				<textFieldExpression><![CDATA[$F{BRANCH}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="143" width="100" height="20" uuid="ffb25dea-bd70-4d7d-9a7b-2b6992e668c0"/>
+				<reportElement x="1" y="165" width="100" height="20" uuid="ffb25dea-bd70-4d7d-9a7b-2b6992e668c0"/>
 				<text><![CDATA[Bill To :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="1" y="163" width="190" height="20" uuid="438020c4-a383-46aa-8dba-8d3ea677a6db"/>
+				<reportElement x="1" y="185" width="190" height="20" uuid="438020c4-a383-46aa-8dba-8d3ea677a6db"/>
 				<textFieldExpression><![CDATA[$F{CUSTOMERNAME}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
-				<reportElement x="1" y="183" width="131" height="20" uuid="fcdf8fa8-2572-413c-a057-7d771fd4f0e5"/>
+				<reportElement x="1" y="205" width="131" height="20" uuid="fcdf8fa8-2572-413c-a057-7d771fd4f0e5"/>
 				<textFieldExpression><![CDATA[$F{MOBILENUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="217" width="14" height="20" forecolor="#999999" uuid="8b453ecf-c2b6-411c-b8aa-6f78172390d5"/>
+				<reportElement x="1" y="239" width="14" height="20" forecolor="#999999" uuid="8b453ecf-c2b6-411c-b8aa-6f78172390d5"/>
 				<text><![CDATA[#]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="237" width="14" height="20" uuid="b167fcf0-0f50-4627-96b4-c5c16b098b07"/>
+				<reportElement x="1" y="259" width="14" height="20" uuid="b167fcf0-0f50-4627-96b4-c5c16b098b07"/>
 				<text><![CDATA[1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="217" width="100" height="20" forecolor="#999999" uuid="5d917dc6-e6c4-4dca-920f-f89d66ec8a86"/>
+				<reportElement x="32" y="239" width="100" height="20" forecolor="#999999" uuid="5d917dc6-e6c4-4dca-920f-f89d66ec8a86"/>
 				<text><![CDATA[Product/Package]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="32" y="237" width="159" height="45" uuid="5e27d686-3424-45d6-a84f-7adfbb01fa3f"/>
+				<reportElement x="32" y="259" width="159" height="45" uuid="5e27d686-3424-45d6-a84f-7adfbb01fa3f"/>
 				<textFieldExpression><![CDATA[$F{MEMBERSHIPPLAN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="209" y="217" width="100" height="20" forecolor="#999999" uuid="abf56c2d-0b66-488a-8050-92f806c8c448"/>
+				<reportElement x="209" y="239" width="100" height="20" forecolor="#999999" uuid="abf56c2d-0b66-488a-8050-92f806c8c448"/>
 				<text><![CDATA[Activation Date]]></text>
 			</staticText>
 			<textField pattern="dd-MMM-yy">
-				<reportElement x="209" y="237" width="100" height="20" uuid="00f778b7-3fba-431c-8f11-18e41312871d"/>
+				<reportElement x="209" y="259" width="100" height="20" uuid="00f778b7-3fba-431c-8f11-18e41312871d"/>
 				<textFieldExpression><![CDATA[$F{STARTINGDATE}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="329" y="217" width="100" height="20" forecolor="#999999" uuid="5b8b29b0-40a3-4b34-a16b-e2d80831c1b6"/>
+				<reportElement x="329" y="239" width="100" height="20" forecolor="#999999" uuid="5b8b29b0-40a3-4b34-a16b-e2d80831c1b6"/>
 				<text><![CDATA[Expiry Date]]></text>
 			</staticText>
 			<textField pattern="dd-MMM-yy">
-				<reportElement x="329" y="237" width="100" height="20" uuid="534578d7-ca12-4d78-939f-a4a02e621304"/>
+				<reportElement x="329" y="259" width="100" height="20" uuid="534578d7-ca12-4d78-939f-a4a02e621304"/>
 				<textFieldExpression><![CDATA[$F{EXPIRATIONDATE}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="456" y="217" width="100" height="20" forecolor="#999999" uuid="2e8a61a6-cbe3-4f8e-970e-80b3f6b5dc55"/>
+				<reportElement x="456" y="239" width="100" height="20" forecolor="#999999" uuid="2e8a61a6-cbe3-4f8e-970e-80b3f6b5dc55"/>
 				<text><![CDATA[Amount (INR)]]></text>
 			</staticText>
 			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
-				<reportElement x="456" y="237" width="100" height="20" uuid="fc75a768-240f-434b-991e-3be65cb9a8f9"/>
+				<reportElement x="456" y="259" width="100" height="20" uuid="fc75a768-240f-434b-991e-3be65cb9a8f9"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{AMOUNT}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="1" y="282" width="555" height="1" forecolor="#CCCCCC" uuid="b21b4092-282c-4744-8697-d11c2da530e3"/>
+				<reportElement x="1" y="295" width="555" height="1" forecolor="#CCCCCC" uuid="b21b4092-282c-4744-8697-d11c2da530e3"/>
 			</line>
 			<staticText>
-				<reportElement x="356" y="283" width="100" height="20" uuid="9f052ade-0b34-4108-a736-08d58efb8a8e"/>
+				<reportElement x="356" y="305" width="100" height="20" uuid="9f052ade-0b34-4108-a736-08d58efb8a8e"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sub Total]]></text>
 			</staticText>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="456" y="283" width="100" height="20" uuid="6178ca94-df77-40e1-9925-1d1504dec31e"/>
+				<reportElement x="456" y="305" width="100" height="20" uuid="6178ca94-df77-40e1-9925-1d1504dec31e"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{AMOUNT}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="356" y="303" width="100" height="20" uuid="cb618c76-08ce-4e93-89e2-e207c4bdfb87"/>
+				<reportElement x="356" y="325" width="100" height="20" uuid="cb618c76-08ce-4e93-89e2-e207c4bdfb87"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[SGST 9%]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="356" y="323" width="100" height="20" uuid="74aa8afe-a0af-4b4c-8c77-7779a895a87c"/>
+				<reportElement x="356" y="345" width="100" height="20" uuid="74aa8afe-a0af-4b4c-8c77-7779a895a87c"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[CGST 9%]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="356" y="343" width="100" height="20" uuid="2499b3c5-66b9-41aa-9ff2-df7dd1275de0"/>
+				<reportElement x="356" y="365" width="100" height="20" uuid="2499b3c5-66b9-41aa-9ff2-df7dd1275de0"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="456" y="303" width="100" height="20" uuid="6899f5b6-ad0c-4a42-aaad-6088679fb5c1"/>
+				<reportElement x="456" y="325" width="100" height="20" uuid="6899f5b6-ad0c-4a42-aaad-6088679fb5c1"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{SGST}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="456" y="323" width="100" height="20" uuid="db894d0d-c668-4311-8e89-a9f8b84c3673"/>
+				<reportElement x="456" y="345" width="100" height="20" uuid="db894d0d-c668-4311-8e89-a9f8b84c3673"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{CGST}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="456" y="343" width="100" height="20" uuid="6a682cff-de63-41bb-81cb-01d3736106da"/>
+				<reportElement x="456" y="365" width="100" height="20" uuid="6a682cff-de63-41bb-81cb-01d3736106da"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{TOTALAMOUNT}]]></textFieldExpression>
 			</textField>
@@ -171,54 +171,54 @@
 				<textFieldExpression><![CDATA[$F{USERSNAME}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="385" width="100" height="20" uuid="ac71d368-385c-4ad8-ac90-091ab8bae131"/>
+				<reportElement x="1" y="407" width="100" height="20" uuid="ac71d368-385c-4ad8-ac90-091ab8bae131"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Payment Received]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="405" width="100" height="20" forecolor="#999999" uuid="9a3833cc-af51-4f48-a8eb-cc8354fe3608"/>
+				<reportElement x="1" y="427" width="100" height="20" forecolor="#999999" uuid="9a3833cc-af51-4f48-a8eb-cc8354fe3608"/>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="151" y="405" width="100" height="20" forecolor="#999999" uuid="4c72c6ea-eaff-4f53-95ad-5d992b4f4767"/>
+				<reportElement x="151" y="427" width="100" height="20" forecolor="#999999" uuid="4c72c6ea-eaff-4f53-95ad-5d992b4f4767"/>
 				<text><![CDATA[Payment Mode]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="310" y="405" width="100" height="20" forecolor="#999999" uuid="f818f864-5a01-4cd0-b326-77ae56280c60"/>
+				<reportElement x="310" y="427" width="100" height="20" forecolor="#999999" uuid="f818f864-5a01-4cd0-b326-77ae56280c60"/>
 				<text><![CDATA[Amount]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="216" width="555" height="1" forecolor="#CCCCCC" uuid="5b371dd1-b7e0-4da3-a566-5cf1c1407330"/>
+				<reportElement x="1" y="232" width="555" height="1" forecolor="#CCCCCC" uuid="5b371dd1-b7e0-4da3-a566-5cf1c1407330"/>
 			</line>
 			<line>
-				<reportElement x="0" y="363" width="555" height="1" forecolor="#CCCCCC" uuid="2cf3341e-4096-4894-b941-116b074bc899"/>
+				<reportElement x="0" y="394" width="555" height="1" forecolor="#CCCCCC" uuid="2cf3341e-4096-4894-b941-116b074bc899"/>
 			</line>
 			<textField pattern="dd/MM/yyyy h.mm a">
-				<reportElement x="0" y="425" width="100" height="20" uuid="53742683-69b9-49c8-809c-b173ae13cf31"/>
+				<reportElement x="0" y="447" width="100" height="20" uuid="53742683-69b9-49c8-809c-b173ae13cf31"/>
 				<textFieldExpression><![CDATA[$F{INVOICEDATE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="151" y="425" width="100" height="20" uuid="1ccde9ba-f1f2-45d3-9fab-2829ebeed246"/>
+				<reportElement x="151" y="447" width="100" height="20" uuid="1ccde9ba-f1f2-45d3-9fab-2829ebeed246"/>
 				<textFieldExpression><![CDATA[$F{PAYMENTMODE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="310" y="425" width="100" height="20" uuid="7be7775d-a1f4-4cff-8095-1aaf755faefe"/>
+				<reportElement x="310" y="447" width="100" height="20" uuid="7be7775d-a1f4-4cff-8095-1aaf755faefe"/>
 				<textFieldExpression><![CDATA[$F{TOTALAMOUNT}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="1" y="445" width="555" height="1" forecolor="#CCCCCC" uuid="9014e392-74b7-41d4-b50c-cdae0f3338d5"/>
+				<reportElement x="1" y="476" width="555" height="1" forecolor="#CCCCCC" uuid="9014e392-74b7-41d4-b50c-cdae0f3338d5"/>
 			</line>
 			<staticText>
-				<reportElement x="0" y="465" width="121" height="20" uuid="ab102926-6720-4acf-b730-af24c8517758"/>
+				<reportElement x="0" y="487" width="121" height="20" uuid="ab102926-6720-4acf-b730-af24c8517758"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Terms and Conditions :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="485" width="410" height="69" uuid="4ed65aa9-afb0-49a0-a0d8-d0471778c4e8"/>
+				<reportElement x="0" y="507" width="410" height="69" uuid="4ed65aa9-afb0-49a0-a0d8-d0471778c4e8"/>
 				<text><![CDATA[1) Fees are non-refundable.
 2) Payments made by check, if bounced will be penalized Rs. 500.
 3) All members are requested to collect receipts at time of admission & preserve it.
@@ -226,15 +226,33 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="580" width="150" height="20" uuid="ef80063a-c0ca-4a97-98a1-842ec496e71e"/>
+				<reportElement x="1" y="602" width="150" height="20" uuid="ef80063a-c0ca-4a97-98a1-842ec496e71e"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[For TitanX Fitness Pvt. Ltd.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="600" width="150" height="20" uuid="e03d652f-c0c4-449c-bb0a-338eacb15fad"/>
+				<reportElement x="1" y="622" width="150" height="20" uuid="e03d652f-c0c4-449c-bb0a-338eacb15fad"/>
 				<text><![CDATA[Authorised Signatory : ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="1" width="108" height="91" uuid="1bef939a-ecfe-4d18-81d5-9c28a4cc2069"/>
+				<imageExpression><![CDATA["C:\\Invoice\\TitanX Logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="85" width="151" height="20" uuid="5e0b01db-366d-4f54-a426-7e9e563a5bf3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TitanX Fitness Ltd.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="105" width="176" height="27" uuid="270d98be-97b5-4740-ae4f-01e323ba9e7f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kothrud, Pune-38]]></text>
 			</staticText>
 		</band>
 	</title>

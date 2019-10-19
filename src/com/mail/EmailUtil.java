@@ -88,19 +88,7 @@ public class EmailUtil {
             
             msg.setRecipients(Message.RecipientType.TO, toEmail);
             
-            BodyPart messageBodyPart=new MimeBodyPart();
-            
-            messageBodyPart.setText(body);
-            
-            Multipart multipart=new MimeMultipart();
-            
-            multipart.addBodyPart(messageBodyPart);
-            
-            messageBodyPart=new MimeBodyPart();
-            
-            multipart.addBodyPart(messageBodyPart);
-            
-            msg.setContent(multipart);
+            msg.setText(body);
             
             Transport.send(msg);
             

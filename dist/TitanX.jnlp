@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TitanX.jar" size="2924120" download="eager" />
+    <jar href="TitanX.jar" size="2936675" download="eager" />
     <jar href="lib\com.lowagie.text-2.1.7.jar" size="1782376" download="eager" />
     <jar href="lib\commons-beanutils-1.8.3.jar" size="232019" download="eager" />
     <jar href="lib\commons-collections-2.1.jar" size="165119" download="eager" />
@@ -16,7 +16,6 @@
     <jar href="lib\commons-digester-1.7.jar" size="139966" download="eager" />
     <jar href="lib\commons-logging-api-1.0.2.jar" size="18404" download="eager" />
     <jar href="lib\fontawesomefx-8.1.jar" size="179086" download="eager" />
-    <jar href="lib\gnujaxp.jar" size="231445" download="eager" />
     <jar href="lib\iText.jar" size="1649151" download="eager" />
     <jar href="lib\jasper-compiler-jdt.jar" size="1395272" download="eager" />
     <jar href="lib\jasperreports-6.8.0.jar" size="5590295" download="eager" />

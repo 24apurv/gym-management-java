@@ -22,6 +22,8 @@ import javafx.collections.ObservableList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
@@ -184,6 +186,8 @@ public class ReportGenerator {
             dataset.addValue(entry.getValue(), "Sales", entry.getKey());
         }
         JFreeChart barChartObj = ChartFactory.createBarChart("Plan wise sales", "Plan", "Sales", dataset, PlotOrientation.VERTICAL, true, true, false);
+        CategoryAxis axis = barChartObj.getCategoryPlot().getDomainAxis();
+        axis.setCategoryLabelPositions(CategoryLabelPositions.UP_45);
         File barChart = new File("F:/Report/PlanSales.jpeg");
         ChartUtilities.saveChartAsJPEG(barChart, barChartObj, 640, 480);
         Desktop.getDesktop().open(barChart);

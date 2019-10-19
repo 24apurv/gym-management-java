@@ -46,6 +46,7 @@ import javafx.stage.StageStyle;
 
 public class AdminWindowController implements Initializable {
 
+    @FXML
     private StackPane stackPane;
     @FXML
     private BorderPane parent;
@@ -149,12 +150,18 @@ public class AdminWindowController implements Initializable {
     private JFXButton btnBranchSales;
     @FXML
     private JFXButton btnPlanSales;
+    @FXML
+    private JFXButton btnRefreshBranch;
+    @FXML
+    private JFXButton btnRefreshUser;
+    @FXML
+    private JFXButton btnRefreshPlan;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            lblHello.setText("Hello, "+PersistUsers.getUsers().getUsername());
+            lblHello.setText("Hello, "+PersistUsers.getUsers().getUsersname());
             branchList = PersistBranch.retrieveAll();
             usersList = PersistUsers.retrieveAll();
             plansList = PersistMembershipPlans.retrieveAll();
@@ -191,7 +198,7 @@ public class AdminWindowController implements Initializable {
     }
 
     @FXML
-    private void addBranch(MouseEvent event) throws IOException {
+    private void addBranch(MouseEvent event) throws IOException, SQLException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("AddBranch.fxml"));
         Scene scene = new Scene(root);
@@ -493,6 +500,24 @@ public class AdminWindowController implements Initializable {
     @FXML
     private void planSales(MouseEvent event) throws SQLException, IOException {
         ReportGenerator.planSales();
+    }
+
+    @FXML
+    private void refreshBranch(MouseEvent event) throws SQLException {
+        branchList = PersistBranch.retrieveAll();
+        branchTable.setItems(branchList);
+    }
+
+    @FXML
+    private void refreshUser(MouseEvent event) throws SQLException {
+        usersList = PersistUsers.retrieveAll();
+        usersTable.setItems(usersList);
+    }
+
+    @FXML
+    private void refreshPlan(MouseEvent event) throws SQLException {
+        plansList = PersistMembershipPlans.retrieveAll();
+        plansTable.setItems(plansList);
     }
     
 }

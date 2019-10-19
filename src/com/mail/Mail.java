@@ -69,7 +69,7 @@ public class Mail {
         
         String body = message;
         
-        EmailUtil.sendAttachmentEmail(session, toEmail, subject, body);
+        EmailUtil.sendEmail(session, toEmail, subject, body);
                     
         
     }
