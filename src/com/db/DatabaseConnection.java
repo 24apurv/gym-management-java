@@ -15,9 +15,9 @@ public class DatabaseConnection {
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
             
-            String url="jdbc:oracle:thin:@titanx.ckvadj2t5tmc.ap-south-1.rds.amazonaws.com:1521:titanx";
-            String username="admin";
-            String password="admin123";
+            String url="db-url";
+            String username="db-username";
+            String password="db-password";
             
             connect=DriverManager.getConnection(url, username, password);
             
